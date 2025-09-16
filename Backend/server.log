@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/bin/uvicorn", line 9, in <module>
+    sys.exit(main())
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/uvicorn/main.py", line 413, in main
+    run(
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/uvicorn/main.py", line 580, in run
+    server.run()
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/uvicorn/config.py", line 436, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/app/main.py", line 4, in <module>
+    from app.api import user_routes  # ensure package import works (app/api/__init__.py may export router)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/app/api/user_routes.py", line 8, in <module>
+    from app.database.connection import get_db
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/app/database/connection.py", line 11, in <module>
+    engine = create_engine(DATABASE_URL, pool_pre_ping=True)
+  File "<string>", line 2, in create_engine
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/sqlalchemy/engine/create.py", line 617, in create_engine
+    dbapi = dbapi_meth(**dbapi_args)
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 696, in import_dbapi
+    import psycopg2
+  File "/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/psycopg2/__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+ImportError: dlopen(/Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/psycopg2/_psycopg.cpython-39-darwin.so, 0x0002): Library not loaded: @rpath/libpq.5.dylib
+  Referenced from: <685F846F-B15B-3130-B4F4-F8A621390854> /Users/shobhitsingh/Desktop/Work/Phase 4/Harmony/Backend/.venv/lib/python3.9/site-packages/psycopg2/_psycopg.cpython-39-darwin.so
+  Reason: tried: '/usr/local/lib/libpq.5.dylib' (no such file), '/usr/lib/libpq.5.dylib' (no such file, not in dyld cache)
